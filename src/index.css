@@ -1,0 +1,51 @@
+body {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.responsive-title {
+  font-family: 'Elsie', cursive;
+  font-size: clamp(2.5rem, 10vw, 6rem);
+  font-weight: 900;
+  line-height: 1.1;
+  letter-spacing: 2px;
+}
+
+.responsive-title p {
+  margin: 0;
+}
+
+.groom-header.accordion-header > button {
+  /* background-color: #5f8b9b !important; */
+  color: #5f8b9b !important;
+}
+
+.bride-header.accordion-header > button {
+  /* background-color: #bb7273 !important; */
+  color: #bb7273 !important;
+}
+
+.groom-btn {
+  background-color: #5f8b9b !important;
+  color: white !important;
+  border-color: #5f8b9b !important;
+}
+
+.bride-btn {
+  background-color: #bb7273 !important;
+  color: white !important;
+  border-color: #bb7273 !important;
+}
+
+.no-hover-bg:hover,
+.no-hover-bg:focus {
+  background-color: transparent !important;
+  box-shadow: none !important;
+}
