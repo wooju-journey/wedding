@@ -28,7 +28,7 @@ function Invitation() {
           <div style={{margin: "3rem 0"}}>
             <div style={{display: "flex", justifyContent: "center", alignItems: "center", marginBottom: "1rem"}}>
               <span style={{fontSize: "1.6rem", fontWeight: "bold"}}>{groomName}</span>
-              <span style={{margin: "0 1.5rem", fontSize: "1.2rem"}}>&</span>
+              <span style={{margin: "0 1.5rem", fontSize: "1.2rem"}}>❤️</span>
               <span style={{fontSize: "1.6rem", fontWeight: "bold"}}>{brideName}</span>
             </div>
           </div>
