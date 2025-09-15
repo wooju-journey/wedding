@@ -1,0 +1,40 @@
+.calendar {
+  max-width: 400px;
+  margin: auto;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1rem;
+}
+.month-header {
+  margin-bottom: 1rem;
+}
+.days-header, .days-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  text-align: center;
+}
+.day-name, .day {
+  padding: 0.5rem;
+}
+.day.empty {
+  /* empty */
+}
+.day.wedding-day {
+  background-color: #ffe0e0;
+  border-radius: 50%;
+  font-weight: bold;
+  color: #d9534f;
+  position: relative;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+}
+.heart {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  font-size: 0.6rem;
+}
