@@ -12,9 +12,9 @@ function Gift() {
   const groomFather = { name: "임동문", account: "국민은행 621902-97-100950" };
   const groomMother = { name: "박현순", account: "국민은행 94333567266" };
 
-  const bride = { name: "방주영", account: "XX은행 444-444-444444" };
-  const brideFather = { name: "방영환", account: "XX은행 555-555-555555" };
-  const brideMother = { name: "김승순", account: "XX은행 666-666-666666" };
+  const bride = { name: "방주영", account: "SC은행 225-20-060253" };
+  const brideFather = { name: "방영환", account: "SC은행 780-20-218312" };
+  const brideMother = { name: "김승순", account: "SC은행 791-20-253508" };
 
   return (
     <div className="my-5">
