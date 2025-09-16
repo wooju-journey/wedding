@@ -3,8 +3,8 @@ import React, { useEffect, useRef } from 'react';
 function Location() {
   // 여기에 네이버 지도 클라이언트 ID를 입력하세요.
   // 클라이언트 시크릿은 프론트엔드에서 필요하지 않습니다.
-  // const NAVER_MAP_CLIENT_ID = "4xafrz9koc";
-  const NAVER_MAP_CLIENT_ID = null;
+  const NAVER_MAP_CLIENT_ID = "4xafrz9koc";
+  // const NAVER_MAP_CLIENT_ID = null;
 
 
   const locationName = "라마다서울신도림호텔웨딩";
@@ -86,15 +86,15 @@ function Location() {
       />
       <div className="d-flex justify-content-center align-items-center mt-3">
         <a href={`tmap://?rGoName=${locationName}&rGoX=${lng}&rGoY=${lat}`} className="text-center text-decoration-none mx-2">
-          <img src="/icon/tmap.jpg" alt="T-map" style={{width: '40px', height: '40px', borderRadius: '5px'}} />
+          <img src={`${process.env.PUBLIC_URL}/icon/tmap.jpg`} alt="T-map" style={{width: '40px', height: '40px', borderRadius: '5px'}} />
           <p className="mt-1 mb-0" style={{fontSize: '0.8rem', color: '#666'}}>티맵</p>
         </a>
         <a href={`kakaonavi://route?name=${locationName}&x=${lng}&y=${lat}`} className="text-center text-decoration-none mx-2">
-          <img src="/icon/kakao.png" alt="Kakao Navi" style={{width: '40px', height: '40px', borderRadius: '5px'}} />
+          <img src={`${process.env.PUBLIC_URL}/icon/kakao.png`} alt="Kakao Navi" style={{width: '40px', height: '40px', borderRadius: '5px'}} />
           <p className="mt-1 mb-0" style={{fontSize: '0.8rem', color: '#666'}}>카카오내비</p>
         </a>
         <a href={`nmap://navigation?dlat=${lat}&dlng=${lng}&dname=${locationName}`} className="text-center text-decoration-none mx-2">
-          <img src="/icon/naver.jpg" alt="Naver Map" style={{width: '40px', height: '40px', borderRadius: '5px'}} />
+          <img src={`${process.env.PUBLIC_URL}/icon/naver.jpg`} alt="Naver Map" style={{width: '40px', height: '40px', borderRadius: '5px'}} />
           <p className="mt-1 mb-0" style={{fontSize: '0.8rem', color: '#666'}}>네이버지도</p>
         </a>
       </div>
