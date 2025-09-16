@@ -1,32 +1,37 @@
 import React from 'react';
 
 function Share() {
+  const weddingUrl = 'https://wooju-journey.github.io/wedding/251102/';
+  const imageUrl = 'https://wooju-journey.github.io/wedding/251102/main.jpg';
+
   const copyLink = () => {
-    navigator.clipboard.writeText(window.location.href);
+    navigator.clipboard.writeText(weddingUrl);
     alert("링크가 복사되었습니다.");
   };
 
   const shareOnKakao = () => {
     if (window.Kakao) {
-      window.Kakao.Link.sendDefault({
-        objectType: 'location',
-        address: '서울 구로구 경인로 624',
-        addressTitle: '라마다서울신도림호텔웨딩',
+      if (!window.Kakao.isInitialized()) {
+        alert("카카오 SDK가 초기화되지 않았습니다. 카카오 자바스크립트 키를 확인해주세요.");
+        return;
+      }
+      window.Kakao.Share.sendDefault({
+        objectType: 'feed',
         content: {
           title: '우리의 결혼식에 초대합니다',
           description: '라마다서울신도림호텔웨딩',
-          imageUrl: 'main.jpg', // you can change this to your main image
+          imageUrl: imageUrl,
           link: {
-            mobileWebUrl: window.location.href,
-            webUrl: window.location.href,
+            mobileWebUrl: weddingUrl,
+            webUrl: weddingUrl,
           },
         },
         buttons: [
           {
             title: '웹으로 보기',
             link: {
-              mobileWebUrl: window.location.href,
-              webUrl: window.location.href,
+              mobileWebUrl: weddingUrl,
+              webUrl: weddingUrl,
             },
           },
         ],

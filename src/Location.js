@@ -15,6 +15,19 @@ function Location() {
 
   const mapElement = useRef(null);
 
+  const handleKakaoNavi = () => {
+    if (window.Kakao && window.Kakao.isInitialized()) {
+      window.Kakao.Navi.start({
+        name: locationName,
+        x: lng,
+        y: lat,
+        coordType: 'wgs84',
+      });
+    } else {
+      alert('카카오 SDK가 로드되지 않았거나 초기화에 실패했습니다. 잠시 후 다시 시도해주세요.');
+    }
+  };
+
   useEffect(() => {
 
     const scriptId = 'naver-maps-script';
@@ -54,7 +67,7 @@ function Location() {
       script.onerror = () => {
         console.error("Naver Maps 스크립트 로딩에 실패했습니다. Client ID가 유효한지, Naver Cloud Platform에서 Web 서비스 URL 등록('http://localhost:3000' 등)이 올바르게 되었는지 확인해주세요.");
         if (mapElement.current) {
-          mapElement.current.innerHTML = '<div style="width: 100%; height: 100%; display: flex; justify-content: center; align-items: center; background-color: #f0f0f0; border: 1px solid #ccc;">지도 로딩 실패. Client ID 또는 도메인 설정을 확인해주세요.</div>';
+          mapElement.current.innerHTML = '<div style={{width: "100%", height: "100%", display: "flex", justifyContent: "center", alignItems: "center", backgroundColor: "#f0f0f0", border: "1px solid #ccc"}}>지도 로딩 실패. Client ID 또는 도메인 설정을 확인해주세요.</div>';
         }
       };
       document.head.appendChild(script);
@@ -85,11 +98,11 @@ function Location() {
         }}
       />
       <div className="d-flex justify-content-center align-items-center mt-3">
-        <a href={`tmap://?rGoName=${locationName}&rGoX=${lng}&rGoY=${lat}`} className="text-center text-decoration-none mx-2">
+        <a href={`tmap://route?goalname=${encodeURIComponent(locationName)}&goalx=${lng}&goaly=${lat}`} className="text-center text-decoration-none mx-2">
           <img src={`${process.env.PUBLIC_URL}/icon/tmap.jpg`} alt="T-map" style={{width: '40px', height: '40px', borderRadius: '5px'}} />
           <p className="mt-1 mb-0" style={{fontSize: '0.8rem', color: '#666'}}>티맵</p>
         </a>
-        <a href={`kakaonavi://route?name=${locationName}&x=${lng}&y=${lat}`} className="text-center text-decoration-none mx-2">
+        <a href="#" onClick={(e) => { e.preventDefault(); handleKakaoNavi(); }} className="text-center text-decoration-none mx-2">
           <img src={`${process.env.PUBLIC_URL}/icon/kakao.png`} alt="Kakao Navi" style={{width: '40px', height: '40px', borderRadius: '5px'}} />
           <p className="mt-1 mb-0" style={{fontSize: '0.8rem', color: '#666'}}>카카오내비</p>
         </a>
