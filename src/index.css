@@ -1,3 +1,10 @@
+@font-face {
+    font-family: 'Super Frosting';
+    src: url('../public/font/Super Frosting.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 body {
   margin: 0;
   font-family: 'Montserrat', sans-serif;
@@ -11,7 +18,7 @@ code {
 }
 
 .responsive-title {
-  font-family: 'Elsie', cursive;
+  font-family: 'Super Frosting', cursive;
   font-size: clamp(2.5rem, 10vw, 6rem);
   font-weight: 900;
   line-height: 1.1;

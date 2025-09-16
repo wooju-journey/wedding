@@ -8,9 +8,9 @@ function Gift() {
     alert("계좌번호가 복사되었습니다.");
   };
 
-  const groom = { name: "임우찬", account: "OO은행 111-111-111111" };
-  const groomFather = { name: "임동문", account: "OO은행 222-222-222222" };
-  const groomMother = { name: "박현순", account: "OO은행 333-333-333333" };
+  const groom = { name: "임우찬", account: "국민은행 171302-04-117983" };
+  const groomFather = { name: "임동문", account: "국민은행 621902-97-100950" };
+  const groomMother = { name: "박현순", account: "국민은행 94333567266" };
 
   const bride = { name: "방주영", account: "XX은행 444-444-444444" };
   const brideFather = { name: "방영환", account: "XX은행 555-555-555555" };
