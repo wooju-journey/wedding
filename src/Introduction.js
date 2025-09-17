@@ -12,6 +12,7 @@ function Introduction() {
       width: '100%',
       height: 'auto',
       display: 'block',
+      aspectRatio: '2 / 3',
     },
     textOverlay: {
       position: 'absolute',
